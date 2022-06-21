@@ -1,0 +1,35 @@
+-
+  const slides = [
+    { title: 'Modern Chair', rating: 4.7, price: 99.99 },
+    { title: 'Antique Chair', rating: 4.5, price: 299.99 },
+    { title: 'Magazine Holder', rating: 5, price: 149.99 },
+    { title: 'Comfort Chair', rating: 3.5, price: 599.99 },
+  ]
+.star-product
+  img.star-product__bg-elem(src="/src/img/star_product/bg_elem.jpeg" alt="Star product")
+  .container
+    h2.title OUR STAR PRODUCTS
+    .description Discover all our beautiful and unique products which are perfect for your home.
+    .star-product__tabs 
+      each name, idx in ['FEATURE', 'LATEST', 'SELLER']
+        div(class=`star-product__tab ${idx === 0 ? 'active' : ''}`)
+          span= name
+    #star-slider.slider-wrap
+      .prev.button-round.button-round_small
+        i.ic_arrow_left 
+      .slider.slider_star
+        each slide, i in slides
+          div(class=`slide slide_star ${i+1 == 2 ? 'active' : ''}`)
+            img.slide__img(src=`/src/img/star_product/${i+1}.jpeg` alt=slide.title)
+            .slide__body
+              .slide__content
+                .slide__info 
+                  .slide__desc= slide.title
+                  .slide__rating 
+                    i.ic_star
+                    span= slide.rating
+                .button-round.button-round_shadow.slide__buy
+                  i.ic_cart
+              .slide__price $#{slide.price}
+      .next.button-round.button-round_small
+        i.ic_arrow_right 

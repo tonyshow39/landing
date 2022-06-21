@@ -1,0 +1,22 @@
+-
+  const timer = [
+    { name: 'Days', id: 'days' },
+    { name: 'Hours', id: 'hours' },
+    { name: 'Minutes', id: 'minutes' },
+    { name: 'Seconds', id: 'seconds' },
+  ]
+section.deals
+  img.deals__bg-elem-1(src="/src/img/deals/elem_1.svg")
+  img.deals__bg-elem-2(src="/src/img/deals/elem_2.svg")
+  .container
+    .deals__content
+      h2.title.title_no-underline SPECIAL DEALS FOR THIS WEEK
+      .timer 
+        each item in timer
+          .timer__item 
+            .timer__num
+              svg.circle(viewBox="0 0 100 100")
+                circle.segment(r="9.55%" cx="50%" cy="50%")
+              span(id=item.id) 0
+            .timer__name= item.name
+      .button.button_md Shop Now

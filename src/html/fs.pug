@@ -1,0 +1,51 @@
+mixin menuLinks
+  a.menu__item.menu__item_active(href) Home
+  a.menu__item(href) Shop
+  a.menu__item(href) Blog
+  a.menu__item(href) About Us
+  a.menu__item(href) Product
+  a.menu__item(href) Pages
+  a.menu__item(href) Contact Us
+mixin selectbox(cls)
+  div(class=`selectbox ${cls}`)
+    .selectbox__selected USD
+    .selectbox__list
+      .selectbox__item EUR
+      .selectbox__item.selected USD
+      .selectbox__item RUB
+
+section.fs
+  .container
+    header.header
+      .header__top
+        .header__left
+          img.header__headephone(src='/img/fs/headphone.png' alt='Headphone')
+          .header__phone +91998 654 6583
+          .header__welcome Welcome you Benco store!
+        .header__right
+          +selectbox('header__action')
+          .button.header__action(title="Кнопка" some="test") My Account
+          #mobile-btn.header__mobile-menu-btn
+            div
+          #mobile-menu.menu.menu_mobile
+            .menu__close-btn
+            +selectbox('header__mobile-action')
+            .button.header__mobile-action My Account
+            .menu__wrap
+              +menuLinks
+      .header__bottom
+        .header__left
+          .header__logo Logo
+          nav.menu
+            +menuLinks
+        .header__right
+          .header__icon
+            i.ic_search
+          .header__icon
+            i.ic_cart
+    .fs__content
+      h1#title.fs__title Simple Furniture with 
+        a(href="https://tonyshow.ru") high-end 
+        | quality
+      .fs__description Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      .button Shop Now

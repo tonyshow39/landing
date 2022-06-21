@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap");
+@import url("../fonts/icons-font/style.css");
+@import "modules/settings.scss";
+@import "modules/ui-kit.scss";
+@import "modules/fs.scss";
+@import "modules/about.scss";
+@import "modules/product.sass";
+@import "modules/deals.sass";
+@import "modules/star_product.sass";
+@import "modules/service.sass";
+@import "modules/blog.sass";
+@import "modules/reviews.sass";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $roboto;
+  font-size: 18px;
+  color: $dark;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: $contentMaxWidth;
+  padding: 0 $margin * 2;
+  @include notebook {
+    padding: 0 $margin;
+  }
+}

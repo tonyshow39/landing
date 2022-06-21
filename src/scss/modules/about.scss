@@ -1,0 +1,106 @@
+.about {
+  padding: 80px 0;
+  @include tablet {
+    padding: 6vw 0;
+    text-align: center;
+    .title,
+    .button {
+      margin: 0 auto;
+    }
+  }
+  &__content {
+    position: relative;
+    padding: $margin;
+    background-color: $bg_light_glass_2;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 80vw;
+      padding: $margin * 3 $margin * 2 0;
+    }
+    @include phone_sm {
+      padding: $margin * 2 $margin * 1.5 0;
+      border-radius: 20px;
+      margin: 0 calc($margin / -2);
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 650px;
+    @include tablet {
+      grid-row: 2;
+    }
+
+    &-elem {
+      $size: 15vw;
+      width: $size;
+      height: $size;
+      position: absolute;
+      bottom: $size * -0.45;
+      left: $size * -0.45;
+    }
+  }
+  &__info {
+    padding: $margin * 3 0;
+    padding-right: 18vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    @include desktop {
+      padding-right: 0;
+    }
+    @include tablet {
+      padding: 0;
+    }
+
+    > * {
+      position: relative;
+    }
+    &-img {
+      position: absolute;
+      right: 0;
+      top: 23%;
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    font: 600 76px/1.2em $montserrat;
+    margin: $margin * 1.5 0 $margin * 2;
+    @include notebook {
+      font-size: 58px;
+      margin: $margin 0 $margin * 1.5;
+    }
+    @include notebook {
+      margin-bottom: $margin;
+    }
+    @include phone {
+      font-size: 7vw;
+    }
+    @include phone_sm {
+      font-size: 28px;
+    }
+  }
+  &__description {
+    font: 500 22px/1.2em $roboto;
+    color: $dark_glass;
+    margin-bottom: $margin * 1.5;
+    @include notebook {
+      font-size: 20px;
+      line-height: 1.4em;
+    }
+    @include phone {
+      font-size: 3.3vw;
+    }
+    @include phone_sm {
+      font-size: 18px;
+    }
+  }
+}

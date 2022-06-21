@@ -1,0 +1,26 @@
+.blog
+  .container
+    .blog__bg-box
+    img.blog__bg-elem-1(src="/src/img/blog/bg_elem_1.svg" alt="Blog")
+    img.blog__bg-elem-2(src="/src/img/blog/bg_elem_2.svg" alt="Blog")
+    .title WHAT’S NEW IN OUR BLOG
+    .description Only for our customers we have some collections of the blog post.
+    #films.blog__content
+      //- -
+      //-   const cards = [
+      //-     { title: 'Home Decore', date: '13 September', comments: 5 },
+      //-     { title: 'Home Decore', date: '30 November', comments: 9 },
+      //-     { title: 'Home Decore', date: '3 December', comments: 12 },
+      //-     { title: 'Home Decore', date: '27 December', comments: 6 },
+      //-   ]
+      //- each card, i in cards 
+      //-   .card(style=`background-image: url('/src/img/blog/${i+1}.jpeg')`)
+      //-     .card__info
+      //-       div
+      //-         i.ic_calendar 
+      //-         span= card.date
+      //-       div
+      //-         i.ic_comment 
+      //-         span Comments #{card.comments > 9 ? card.comments : '0'+card.comments}
+      //-     .card__title= card.title
+      //-     a.card__more Read more

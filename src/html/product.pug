@@ -1,0 +1,33 @@
+-
+  const products = [
+    { title: 'Couch Cartoon', rating: 4, price: 159 },
+    { title: 'Cuero Chair', rating: 3, price: 199 },
+    { title: 'Bedroom Bed', rating: 5, price: 359 },
+    { title: 'Outdoor Table', rating: 4, price: 99 },
+    { title: 'Wooden Drawer', rating: 3, price: 299 },
+  ]
+.product
+  img.product__bg-elem(src="/src/img/product/bg_elem.jpeg" alt="")
+  .container
+    h2.title WHAT PRODUCT WE SELL
+    .description Find our best products faster, better and qualitier  product’s choices from us.
+    #product-slider.slider-wrap
+      .prev.button-round.button-round_small
+        i.ic_arrow_left 
+      .slider
+        each product, i in products
+          .slide
+            .slide__head 
+              img.slide__img(src=`/src/img/product/${i+1}.png` alt=product.title)
+              .slide__title= product.title
+            .slide__rating 
+              - let a=0
+              while a < product.rating
+                i.ic_star_fill
+                - a++
+              i.ic_star_fill_part
+            .slide__price $ #{product.price}
+            .slide__desc Lorem Iipsum is simple and dumy text.
+            .button.button_outline_dark Add to Cart
+      .next.button-round.button-round_small
+        i.ic_arrow_right

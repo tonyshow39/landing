@@ -1,0 +1,80 @@
+.reviews
+  position: relative
+  background-color: $accent_bg
+  padding: 5vw 0
+  text-align: center
+  @include desktop
+    padding: 7vw 0
+  @include phone
+    padding: 10vw 0
+  &__bg-elem-1
+    width: 8vw
+    position: absolute
+    left: 1vw
+    top: 1vw
+  &__bg-elem-2
+    position: absolute
+    right: 0
+    top: 50%
+    margin-top: -7vw
+    height: 14vw
+  .title
+    margin-bottom: 4vw
+    @include phone
+      margin-bottom: 0vw
+  &__content
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto))
+    grid-gap: $margin * 4 2vw
+    padding-top: $margin * 2
+    justify-content: center
+    @include desktop
+      padding-top: $margin * 4
+    @include phone
+      padding-top: 16vw
+      grid-template-columns: repeat(auto-fill, minmax(280px, auto))
+      grid-gap: 13vw 2vw
+.review
+  padding: $margin * 5 2vw 3vw
+  background-color: #F8F7F7
+  text-align: center
+  position: relative
+  border-radius: 2vw
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+  @include phone
+    padding: 15vw 4vw 5vw
+    .review__avatar
+      --size: 20vw
+    .review__text
+      font-size: 3.5vw
+    .review__name
+      font-size: 5vw
+      margin-top: 4vw
+    .review__label
+      font-size: 4vw
+  &__avatar
+    --size: 108px
+    width: var(--size)
+    height: var(--size)
+    border-radius: var(--size)
+    background-position: 50% 30%
+    background-size: 120%
+    overflow: hidden
+    display: inline-block
+    position: absolute
+    top: calc(var(--size) / -2)
+    left: 50%
+    margin-left: calc(var(--size) / -2)
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+    border: 2px solid $light
+  &__text
+    font-size: 18px
+    letter-spacing: 0.2vw
+    color: $dark_glass
+  &__name
+    font-weight: 700
+    font-size: 22px
+    margin-top: 2vw
+  &__label
+    font-size: 20px
+    line-height: 1.4em

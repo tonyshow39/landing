@@ -1,0 +1,17 @@
+.service
+  img.service__bg-elem(src="/src/img/service/bg_elem.jpeg" alt="Service")
+  .container
+    .service__content
+      img.service__sofa(src="/src/img/service/sofa.png" alt="Sofa")
+      .service__info
+        -
+          const services = [
+            { title: 'Free Shipping', desc: 'Orders over $100' },
+            { title: '24/7 Support', desc: 'Quick support' },
+            { title: '10-Day Returns', desc: 'Shop with confidence' },
+          ]
+        each service, i in services
+          .service__item
+            img.service__icon(src=`/src/img/service/${i+1}.svg`, alt="Service")
+            .service__title= service.title
+            .service__desc= service.desc

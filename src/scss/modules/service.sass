@@ -1,0 +1,53 @@
+.service
+  position: relative
+  &__bg-elem
+    position: absolute
+    top: 0
+    left: -2vw
+    width: 7vw
+  &__content
+    display: grid
+    grid-template-rows: repeat(2, auto)
+  &__sofa
+    max-width: 956px
+    width: 70vw
+    justify-self: center
+    align-self: end
+    position: relative
+    bottom: -3vw
+  &__info
+    height: 300px
+    display: flex
+    flex-wrap: wrap
+    padding: $margin * 2
+    justify-content: center
+    gap: 8vw
+    align-items: center
+    align-content: center
+    background-color: $accent_bg
+    border-radius: 30px
+    @include phone_sm
+      height: initial
+  &__item
+    display: grid
+    grid-template-columns: repeat(2, auto)
+    grid-template-rows: repeat(2, auto)
+    grid-gap: calc($margin / 2) $margin
+    align-items: center
+    @include phone
+      .service__icon
+        height: 10vw
+    @include phone_sm
+      grid-row-gap: 1vw
+      .service__title
+        font-size: 4vw
+      .service__desc
+        font-size: 3.5vw
+  &__icon
+    grid-row: 1/-1
+  &__title
+    font: 500 20px $roboto
+    align-self: end
+  &__desc
+    font: 400 14px $roboto
+    align-self: start

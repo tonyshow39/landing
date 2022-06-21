@@ -1,0 +1,70 @@
+.blog
+  position: relative
+  padding: 8vw 0 5vw
+  text-align: center
+  .container
+    position: relative
+  &__bg-box,
+  &__bg-elem-1,
+  &__bg-elem-2
+    position: absolute
+  &__bg-box
+    bottom: -2vw
+    left: 7vw
+    width: 52vw
+    height: 30vw
+    border-radius: 0 3vw 3vw 0
+    background-color: $accent_bg
+  &__bg-elem-1
+    width: 20vw
+    right: 5vw
+    top: 2vw
+    @include notebook
+      display: none
+  &__bg-elem-2
+    width: 20vw
+    left: -2vw
+    bottom: 16vw
+  &__content
+    display: grid
+    grid-template-columns: repeat(2, 30vw)
+    grid-auto-rows: 50vw
+    grid-gap: 5vw
+    justify-content: center
+    @include notebook
+      grid-template-columns: repeat(2, 40vw)
+      grid-auto-rows: 25vw
+      grid-gap: 2vw
+    @include phone
+      grid-template-columns: 90vw
+      grid-auto-rows: 50vw
+      grid-gap: 4vw
+
+.card
+  position: relative
+  background-position: center
+  background-size: cover
+  border-radius: 3vw
+  color: $light
+  font-size: 0.9vw
+  display: grid
+  grid-gap: 0.2vw
+  align-content: end
+  text-align: left
+  padding: 1.5vw 2vw
+  @include notebook
+    font-size: 11px
+    .card__title
+      font-size: 22px
+    .card__more
+      font-size: 14px
+  @include phone
+    padding: 3vw 5vw
+  &__info
+    display: flex
+    gap: 1vw
+  &__title
+    font: 500 2.3vw $roboto
+  &__more
+    font: 400 1.1vw $roboto
+    color: $accent

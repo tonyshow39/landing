@@ -1,0 +1,127 @@
+.star-product
+  position: relative
+  padding: 80px 0
+  text-align: center
+  &__bg-elem
+    position: absolute
+    top: 16%
+    right: 0
+    @include desktop
+      display: none
+  &__tabs
+    position: relative
+    display: grid
+    grid-auto-flow: column
+    grid-auto-columns: minmax(auto, 400px)
+    justify-items: center
+    justify-content: center
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 70vw
+      max-width: 800px
+      transform: translateX(-50%)
+      height: 1px
+      background-color: $dark
+  &__tab
+    --size: 170px
+    width: var(--size)
+    height: var(--size)
+    border-radius: var(--size)
+    cursor: pointer
+    position: relative
+    background-color: $light
+    display: flex
+    align-items: center
+    justify-content: center
+    @include phone
+      --size: 28vw
+      font-size: 3.2vw
+      &::before
+        --offset: 10% !important
+      &::after
+        --offset: 20% !important
+    &::before,
+    &::after
+      --offset: 20px
+      content: ''
+      display: block
+      position: absolute
+      top: var(--offset)
+      right: var(--offset)
+      bottom: var(--offset)
+      left: var(--offset)
+      border-radius: var(--size)
+      border: 1px solid $dark
+      background-color: $light
+    &::after
+      --offset: 35px
+      background-color: $dark
+      opacity: 0.2
+    &.active::after
+      background-color: $accent
+      opacity: 1
+    > *
+      position: relative
+      z-index: 1
+  .slider-wrap .button-round
+    @include tablet
+      top: 46%
+.slider_star
+  grid-gap: 22px
+  grid-auto-columns: 346px
+  grid-template-columns: none
+  @include tablet
+    grid-gap: 50vw
+  &-wrap
+    padding-top: 0
+    padding-bottom: $margin * 3
+    margin-top: $margin * 2
+    @include phone_sm
+      overflow: initial
+    .button-round
+      margin-top: 0
+  .slide_star
+    padding: $margin
+    border: 1px dashed $dark_glass
+    border-radius: 200px 200px 20px 20px
+    overflow: hidden
+    display: grid
+    transition: all 0.3s ease-in-out
+    @include phone
+      margin: 0 12vw
+      min-width: 70vw
+    @include phone_sm
+      margin: 0
+      width: 94vw
+    .slide
+      &.active
+        border-color: $accent
+        box-shadow: 0 15px 39px rgba(0,0,0,0.1)
+      &__img
+        margin-top: 0
+        align-self: center
+        justify-self: center
+      &__body
+        display: grid
+        grid-template-rows: 1fr 70px
+        align-items: end
+      &__content
+        display: flex
+        align-items: center
+        justify-content: space-around
+      &__desc
+        color: $dark
+        font: 500 22px/1em $roboto
+        margin-bottom: calc($margin / 1.5)
+      &__rating
+        color: $dark
+        i
+          margin-right: calc($margin / 2)
+      &__buy
+        font-size: 22px
+        position: initial
+      &__price
+        font: 500 30px/1em $roboto

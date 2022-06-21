@@ -1,0 +1,98 @@
+.product
+  position: relative
+  text-align: center
+  padding: 80px 0
+  &__bg-elem
+    $width: 8vw
+    width: $width
+    position: relative
+    z-index: 1
+    max-width: 122px
+    position: absolute
+    top: 10%
+    right: calc($width / -3)
+  .title
+    margin-bottom: $margin * 1.5
+.slider
+  display: grid
+  grid-auto-columns: 300px
+  grid-auto-flow: column
+  grid-gap: 60px
+  position: relative
+  left: 0
+  transition: all 0.3s ease-in-out
+  @include tablet
+    grid-gap: 50vw
+  &-wrap
+    $gap: 36px
+    position: relative
+    display: grid
+    padding: 0 $gap + 47
+    padding-top: $margin * 5
+    overflow: hidden
+    @include tablet
+      padding: 0
+      padding-top: $margin * 5
+      &::after
+        display: none
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 70px
+      background: linear-gradient(to right, transparent, $light 20%)
+      @include tablet
+        display: none
+    .button-round
+      cursor: pointer
+      position: absolute
+      top: 50%
+      margin-top: calc(47px / -2)
+      z-index: 1
+      &.disable
+        opacity: 0.5
+        pointer-events: none
+      @include tablet
+        top: 60%
+      &:first-child
+        left: 0
+      &:last-child
+        right: 0
+.slide
+  cursor: default
+  @include tablet
+    margin: 0 22vw
+    min-width: 50vw
+  @include phone_sm
+    margin: 0 6vw
+    min-width: 80vw
+  &:hover
+    .slide__head
+      background-color: $accent
+    .button
+      background-color: $accent
+  &__head
+    background-color: $grey
+    border-radius: 30px
+    display: grid
+    justify-items: center
+    height: 150px
+    margin-bottom: $margin
+  &__img
+    margin-top: -20%
+  &__title
+    font-size: 22px
+    font-weight: 500
+  &__rating
+    font-size: 20px
+    color: $accent_light
+  &__price
+    font: 700 26px $montserrat
+    margin: $margin 0
+  &__desc
+    font-size: 18px
+    color: $dark_glass
+    margin-bottom: $margin
